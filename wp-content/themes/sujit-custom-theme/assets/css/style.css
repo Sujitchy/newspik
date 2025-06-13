@@ -24,66 +24,137 @@ body {
 }
 
 
+/* ----------------------------------
+   SCROLLED HEADER STYLES
+-----------------------------------*/
+
+/* Make the header transition smoothly */
+.site-header {
+    transition: padding 0.3s ease-in-out;
+}
+
+/* 1. Hide the small navigation logo by default */
+.nav-logo-link {
+    display: none; /* सुरुमा यो logo लुकाउने */
+}
+
+.nav-logo {
+    height: 45px; /* scrolled header को लागि सानो logo size */
+    width: auto;
+    display: block;
+    margin-right: 20px; /* menu items बाट अलिकति टाढा राख्न */
+}
+
+/* 2. Styles for WHEN the page is scrolled (when .scrolled class is added) */
+.site-header.scrolled .header-container {
+    /* Optional: If you want to make the header content more compact */
+}
+
+/* Hide the original, large branding when scrolled */
+.site-header.scrolled .site-branding {
+    display: none; /* scroll गरेपछि ठूलो logo र site title लुकाउने */
+}
+
+/* Show the small navigation logo when scrolled */
+.site-header.scrolled .nav-logo-link {
+    display: block; /* scroll गरेपछि सानो logo देखाउने */
+}
+
+/* Make the navigation menu vertically centered with the new logo */
+.site-header.scrolled .main-navigation {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Take full width to align menu items properly */
+}
 
 /* -------------------------
    Header Section
 -------------------------- */
- header {
+.site-header {
     background-color: #2c3e50;
     color: white;
-    /* padding: 1.5em 0; */
-    text-align: center;
-    /* border-bottom: 4px solid #e74c3c; */
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; 
+    z-index: 1000;
+    border-bottom: 4px solid #e74c3c;
+    padding: 10px 0; /* Add some vertical padding */
+}
 
-} 
+/* A container to center the content and create the flex layout */
+.header-container {
+    width: 90%;
+    max-width: 1200px; /* Or your preferred max-width */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Pushes branding to the left and nav to the right */
+    align-items: center; /* Vertically aligns items in the middle */
+}
 
-/*
- * 4. Site Logo Styling
- * -------------------------------------------------------------------------- */
+/* -------------------------
+   Site Branding (Logo & Title)
+-------------------------- */
+.site-branding {
+    display: flex; /* Makes logo and text-wrapper align side-by-side */
+    align-items: center; /* Vertically aligns them */
+    gap: 15px; /* Creates a space between the logo and the text */
+}
+
 .header-logo {
-    /* Set a fixed height for your logo. */
-    height: 100px; 
-    /* This ensures the width scales proportionally. */
+    height: 80px;  /* Slightly reduced height for a sleeker look */
     width: auto;
-    /* This removes any extra space below the image. */
-    display: block;
-    padding-left: 20px;
-    margin-top: 20px;
+    display: block; /* Good practice for images */
 }
 
-.site-title
+.site-text-wrapper {
+    text-align: left; /* Override any parent centering */
+}
+
+.site-title {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+.site-title a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
 .site-description {
-    margin-bottom: 20px;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #bdc3c7; /* A lighter color for the tagline */
 }
-
 
 /* -------------------------
    Navigation Menu
 -------------------------- */
-
-nav ul {
+.main-navigation ul {
     list-style: none;
-    background-color: #34495e;
-    overflow: hidden;
-    
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use flexbox for the nav menu as well */
 }
-nav li {
-    float: left;
+
+.main-navigation li {
+    /* No float needed with flexbox */
 }
-nav a {
+
+.main-navigation a {
     display: block;
     color: white;
     padding: 14px 20px;
     text-decoration: none;
     font-size: 1em;
+    transition: background-color 0.3s;
 }
-nav a:hover {
+
+.main-navigation a:hover,
+.main-navigation .current-menu-item > a {
     background-color: #e74c3c;
+    /* border-radius: 4px; */
 }
 
 /* -------------------------
@@ -99,7 +170,7 @@ main {
     flex-grow: 1; /* Add this line */
 }
 .current-menu-item  {
- border-bottom: 1px solid #e74c3c;
+ border-bottom: 5px solid #e74c3c;
     color: #34495e;
 }
 /* -------------------------

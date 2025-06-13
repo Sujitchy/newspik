@@ -30,3 +30,27 @@ add_action('after_setup_theme', 'mytheme_register_menus');
     wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css' );
 }
 add_action( 'wp_enqueue_scripts', 'theme_slug_enqueue_styles' ); ?>
+
+<?php
+// This is an example. If you already have a functions.php, just add the function below.
+
+/**
+ * Enqueue scripts and styles.
+ */
+function my_custom_theme_scripts() {
+    // Enqueue your main stylesheet
+    wp_enqueue_style( 'my-custom-theme-style', get_stylesheet_uri() );
+
+    // Enqueue your new custom JavaScript file
+    wp_enqueue_script(
+        'my-custom-theme-custom-scripts', // A unique name for the script
+        get_template_directory_uri() . '/assets/js/custom-scripts.js', // Path to the file
+        array(), // Dependencies (like jQuery, if needed)
+        '1.0.0', // Version number
+        true // Load in the footer (recommended for performance)
+    );
+}
+add_action( 'wp_enqueue_scripts', 'my_custom_theme_scripts' );
+
+// Your other functions.php code can go here...
+?>
