@@ -1,0 +1,104 @@
+# Copyright (C) 2024 Nilambar Sharma
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Date Today Nepali 3.1.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/date-today-nepali\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: date-today-nepali\n"
+
+#. Plugin Name of the plugin
+#: date-today-nepali.php
+#: app/Admin/Admin.php:78
+#: app/Admin/Admin.php:81
+#: app/Admin/Admin.php:197
+msgid "Date Today Nepali"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: date-today-nepali.php
+msgid "https://www.nilambar.net/2013/10/date-today-nepali-wordpress-plugin.html"
+msgstr ""
+
+#. Description of the plugin
+#: date-today-nepali.php
+msgid "A small widget plugin to display Nepali date."
+msgstr ""
+
+#. Author of the plugin
+#: date-today-nepali.php
+msgid "Nilambar Sharma"
+msgstr ""
+
+#. Author URI of the plugin
+#: date-today-nepali.php
+msgid "https://www.nilambar.net/"
+msgstr ""
+
+#. translators: %s: Version
+#: app/Admin/Admin.php:80
+msgid "Version: %s"
+msgstr ""
+
+#: app/Admin/Admin.php:220
+msgid "Welcome"
+msgstr ""
+
+#: app/Widgets/Dtn.php:29
+msgid "Date Today Nepali Widget"
+msgstr ""
+
+#: app/Widgets/Dtn.php:33
+msgid "Date Display Widget"
+msgstr ""
+
+#: app/Widgets/Dtn.php:106
+msgid "Title:"
+msgstr ""
+
+#: app/Widgets/Dtn.php:110
+msgid "Display Language:"
+msgstr ""
+
+#: app/Widgets/Dtn.php:112
+#: src/edit.js:109
+msgid "Nepali"
+msgstr ""
+
+#: app/Widgets/Dtn.php:113
+#: src/edit.js:113
+msgid "English"
+msgstr ""
+
+#: app/Widgets/Dtn.php:117
+msgid "Date Format:"
+msgstr ""
+
+#: src/edit.js:103
+msgid "Settings"
+msgstr ""
+
+#: src/edit.js:105
+msgid "Language"
+msgstr ""
+
+#: src/edit.js:122
+msgid "Date Format"
+msgstr ""
+
+#: src/block.json
+msgctxt "block title"
+msgid "Date Today Nepali"
+msgstr ""
+
+#: src/block.json
+msgctxt "block description"
+msgid "Nepali date block"
+msgstr ""

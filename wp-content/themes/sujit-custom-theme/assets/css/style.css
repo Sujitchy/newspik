@@ -1,0 +1,702 @@
+/*
+Theme Name: My Custom Theme
+Author: Sujit Chaudhary
+Version: 1.0
+*/
+
+/* -------------------------
+   Base Reset & Typography
+-------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    /* Add these three lines */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+
+/* -------------------------
+   Header Section
+-------------------------- */
+ header {
+    background-color: #2c3e50;
+    color: white;
+    /* padding: 1.5em 0; */
+    text-align: center;
+    /* border-bottom: 4px solid #e74c3c; */
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+
+} 
+
+/*
+ * 4. Site Logo Styling
+ * -------------------------------------------------------------------------- */
+.header-logo {
+    /* Set a fixed height for your logo. */
+    height: 100px; 
+    /* This ensures the width scales proportionally. */
+    width: auto;
+    /* This removes any extra space below the image. */
+    display: block;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.site-title
+.site-description {
+    margin-bottom: 20px;
+}
+
+
+/* -------------------------
+   Navigation Menu
+-------------------------- */
+
+nav ul {
+    list-style: none;
+    background-color: #34495e;
+    overflow: hidden;
+    
+}
+nav li {
+    float: left;
+}
+nav a {
+    display: block;
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 1em;
+}
+nav a:hover {
+    background-color: #e74c3c;
+}
+
+/* -------------------------
+   Main Layout Grid
+-------------------------- */
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    flex-grow: 1; /* Add this line */
+}
+.current-menu-item  {
+ border-bottom: 1px solid #e74c3c;
+    color: #34495e;
+}
+/* -------------------------
+   Featured Articles
+-------------------------- */
+.featured-article {
+    /* background-color: white; */
+    padding: 20px;
+    /* border: 1px solid #ddd; */
+    grid-column: 1 / -1;
+    margin-top: 100px;
+}
+.featured-article h1 {
+    text-align: center;
+}
+.featured-article h1 a {
+    text-decoration: none;
+    color: #3498db;
+    font-size: 50px;
+}
+.featured-article h1 a:hover {
+    color: #e74c3c;
+}
+.featured-article h4 a {
+    text-decoration: none;
+    color: #337ab7;
+}
+.featured-article img {
+    align-items: center;
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+
+.featured-article p {
+ font-size: 20px;
+}
+/* -------------------------
+   Single Post Container
+-------------------------- */
+.post-container {
+    background-color: white;
+    padding: 25px;
+    border: 1px solid #ddd;
+}
+
+/* -------------------------
+   Latest News Section
+-------------------------- */
+.latest-news {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+.latest-news h3 {
+    border-bottom: 2px solid #34495e;
+    padding-bottom: 10px;
+    color: #2c3e50;
+}
+.latest-news ul {
+    list-style: none;
+}
+.latest-news li {
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 10px;
+}
+.latest-news h4 a {
+    color: #337ab7;
+    text-decoration: none;
+}
+.latest-news h4 a:hover {
+    text-decoration: underline;
+}
+
+
+/*-----------------------------
+अन्य समाचारहरू
+------------------------------*/
+
+/* ======== Latest News Section Styling ======== */
+
+/* Main section container */
+.latest-news {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Section heading "अन्य समाचारहरू" */
+.latest-news h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #333;
+    text-align: center; /* Or 'left' if you prefer */
+}
+
+/* Grid container for the news items */
+.news-grid {
+    display: grid;
+    /* This creates a responsive grid that fits as many 300px columns as possible */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px; /* Space between grid items */
+    list-style: none; /* Removes bullet points from the ul */
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual news card */
+.news-item {
+    position: relative; /* Essential for positioning the overlay */
+    border-radius: 8px;
+    overflow: hidden; /* Clips the content to the rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 320px; /* Fixed height for a uniform look */
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* The main link that wraps the entire card */
+.news-item-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* The image inside the card */
+.news-item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Crucial: ensures the image covers the area without distortion */
+    display: block;
+}
+
+/* The overlay for the gradient and text content */
+.news-item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Pushes the content to the bottom */
+    
+    /* The semi-transparent gradient */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%);
+}
+
+/* The content wrapper for text */
+.news-item-content {
+    padding: 20px;
+    color: #ffffff;
+}
+
+/* The news title */
+.news-item-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0 0 5px 0;
+    color: #ffffff;
+}
+
+/* The news excerpt */
+.news-item-excerpt p {
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85); /* Slightly transparent white */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .latest-news h3 {
+        font-size: 1.8rem;
+    }
+    .news-grid {
+        /* On smaller screens, go for 1 or 2 columns */
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+/*-----------------------
+New
+------------------------*/
+/* Main container for the news section */
+    .news-section {
+        max-width: 900px;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* Header for the section (e.g., "समाचार" and "सबै»") */
+    .news-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #e9ecef;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    /* Green title style */
+    .news-header .section-title {
+        background-color: #2c3e50; /* A standard green color */
+        color: white;
+        padding: 8px 16px;
+        font-size: 1rem;
+        font-weight: bold;
+        margin: 0;
+        
+    }
+
+    /* "View All" link style */
+    .news-header .view-all {
+        font-weight: bold;
+        text-decoration: none;
+        color: #343a40;
+        font-size: 0.9rem;
+    }
+
+    /* Container for the news cards */
+    .news-cards-container {
+        display: flex;
+        gap: 20px; /* Space between the cards */
+        flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+    }
+
+    /* Individual news card style */
+    .news-card {
+        flex: 1; /* Allows cards to grow and fill the space */
+        min-width: 300px; /* Minimum width for responsiveness */
+        border: 1px solid #dee2e6;
+        background-color: #ffffff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Card image style */
+    .news-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Content area within the card */
+    .card-content {
+        padding: 15px;
+    }
+
+    /* Timestamp style */
+    .card-content .timestamp {
+        font-size: 0.8rem;
+        color: #6c757d;
+        margin: 0 0 10px 0;
+    }
+
+    /* Headline style */
+    .card-content .headline {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #212529;
+        margin: 0;
+        line-height: 1.4;
+    }
+
+
+/* -------------------------
+   Sidebar
+-------------------------- */
+.sidebar {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+.sidebar h3 {
+    border-bottom: 2px solid #34495e;
+    padding-bottom: 10px;
+    color: #2c3e50;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar li a {
+    text-decoration: none;
+    color: #337ab7;
+    padding: 5px 0;
+    display: block;
+}
+.sidebar li a:hover {
+    color: #e74c3c;
+}
+
+/* -------------------------
+   Post Content
+-------------------------- */
+.post-content {
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+.post-content p {
+    margin-bottom: 20px;
+}
+.post-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* -------------------------
+   Pagination
+-------------------------- */
+.pagination {
+    text-align: center;
+    margin-top: 30px;
+}
+.pagination a,
+.pagination span {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 3px;
+    background-color: #34495e;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.pagination .current {
+    background-color: #e74c3c;
+}
+
+/* -------------------------
+   Footer Section
+-------------------------- */
+footer {
+    background-color: #1c2833;
+    color: #bdc3c7;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+footer a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Menu Styling */
+.footer-menu {
+    margin-bottom: 15px;
+}
+.footer-nav {
+    text-align: center;
+}
+.footer-menu-list {
+    list-style: none;
+    padding: 0;
+}
+.footer-menu-list li {
+    display: inline-block;
+    margin: 0 10px;
+}
+.footer-menu-list a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+}
+.footer-menu-list a:hover {
+    color: #e74c3c;
+}
+
+/* -------------------------
+   Responsive Design
+-------------------------- */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+    nav li {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+
+/*----------404-------------*/
+/* -------------------------
+   404 Page Styles
+-------------------------- */
+main.site-main-404 { /* Targets the <main> element in 404.php */
+    display: block; /* Override display:grid from general 'main' styles if any */
+    width: 90%;
+    max-width: 700px; /* Adjusted for a cleaner look */
+    margin: 40px auto;
+    padding: 30px 25px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    border-radius: 8px;
+}
+
+.error-404-content .error-icon {
+    font-size: 4.5em;
+    color: #e74c3c; /* Theme accent color */
+    margin-bottom: 15px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.error-404-content .error-title {
+    font-size: 5em; /* Large 404 number */
+    font-weight: bold;
+    color: #2c3e50; /* Theme's dark color */
+    margin-bottom: 5px;
+}
+
+.error-404-content .error-subtitle {
+    font-size: 1.8em;
+    color: #34495e; /* Theme's secondary dark color */
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.error-404-content .error-message,
+.error-404-content .error-suggestion {
+    font-size: 1.05em; /* Slightly adjusted */
+    color: #333;
+    margin-bottom: 1.2em;
+    line-height: 1.6;
+}
+.error-404-content .error-suggestion {
+    margin-bottom: 25px;
+}
+
+.error-404-content .error-actions {
+    margin-bottom: 30px;
+}
+
+.error-404-content .error-actions .button-primary-404 {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #e74c3c; /* Theme's primary action color */
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.error-404-content .error-actions .button-primary-404:hover {
+    background-color: #c0392b; /* Darker shade on hover */
+    transform: translateY(-2px);
+}
+
+.error-404-content .error-search {
+    margin-top: 20px;
+}
+.error-404-content .error-search p {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #555;
+}
+
+/* Styling for the default WordPress search form (output by get_search_form()) */
+.error-404-content .search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Space between input and button */
+    max-width: 400px;
+    margin: 0 auto; /* Center the form */
+}
+
+.error-404-content .search-form label {
+    /* screen-reader-text is usually hidden */
+    flex-grow: 1; /* Allow input to take available space */
+}
+
+.error-404-content .search-form .search-field {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    width: 100%; /* Make input take full width of its label container */
+    box-sizing: border-box;
+}
+.error-404-content .search-form .search-field:focus {
+    border-color: #3498db; /* A common focus color from your theme */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.3);
+}
+
+.error-404-content .search-form .search-submit {
+    padding: 10px 18px;
+    background-color: #34495e; /* Theme's navigation color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+.error-404-content .search-form .search-submit:hover {
+    background-color: #2c3e50; /* Darker shade */
+}
+
+/*---------------------
+ Social icon 
+ -------------*/
+/*--------------------------------------------------------------
+# Footer Social Icons
+--------------------------------------------------------------*/
+.social-media-icons {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.social-media-icons ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: inline-block;
+}
+
+.social-media-icons li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-media-icons a {
+    color: #333; /* Change icon color as needed */
+    font-size: 24px; /* Change icon size as needed */
+    transition: color 0.3s ease-in-out;
+}
+
+.social-media-icons a:hover {
+    color: #ffffff; /* Change icon hover color as needed */
+}
+
+/* सम्बन्धित समाचार ग्रिडको लागि */
+.related-news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+    gap: 15px;
+}
+
+.related-news-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden; /* सुनिश्चित गर्नुहोस् कि छविले कन्टेनर नाघ्दैन */
+}
+
+.related-news-item a {
+    display: block;
+    text-decoration: none;
+    color: inherit; /* लिंकको कलर हटाउनुहोस् */
+}
+
+.related-news-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0; /* माथिको दुई कुनाहरूमा मात्र बोर्डर रेडियस */
+}
+
+.related-news-item h4 {
+    font-size: 1em;
+    margin: 10px;
+    text-align: center;
+}
+
+/* मोबाइलको लागि */
+@media (max-width: 768px) {
+    .related-news-grid {
+        grid-template-columns: 1fr; /* मोबाइलमा एउटा मात्र स्तम्भ */
+    }
+}
