@@ -54,3 +54,42 @@ add_action( 'wp_enqueue_scripts', 'my_custom_theme_scripts' );
 
 // Your other functions.php code can go here...
 ?>
+
+<?php
+
+/**
+ * Theme scripts र styles लाई enqueue गर्ने function.
+ * WordPress ले यसलाई `wp_enqueue_scripts` action मार्फत चलाउँछ।
+ */
+function my_custom_theme_enqueue_assets() {
+
+    // तपाईंको मुख्य CSS फाइल (style.css) लाई enqueue गर्ने
+    wp_enqueue_style(
+        'my-theme-main-style', // एउटा यूनिक नाम
+        get_stylesheet_uri()   // style.css को path पत्ता लगाउँछ
+    );
+
+    // तपाईंको custom JavaScript फाइल (scripts.js) लाई enqueue गर्ने
+    wp_enqueue_script(
+        'my-theme-custom-script',                                           // १. स्क्रिप्टको लागि एउटा यूनिक नाम (handle)
+        get_template_directory_uri() . '/assets/js/scripts.js',             // २. तपाईंको scripts.js फाइलको सही path
+        array(),                                                            // ३. Dependencies (जस्तै jQuery को लागि array('jquery'))
+        filemtime( get_template_directory() . '/assets/js/scripts.js' ),    // ४. Version number (filemtime ले cache को समस्या हटाउँछ)
+        true                                                                // ५. `true` ले script लाई footer मा load गर्छ (राम्रो performance को लागि)
+    );
+// ===== ADD THESE LINES FOR GOOGLE FONT =====
+    wp_enqueue_style(
+        'my-theme-google-fonts',
+        'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap',
+        array(),
+        null
+    );
+}
+
+// यो action hook ले WordPress लाई तपाईंको function चलाउन भन्छ
+add_action( 'wp_enqueue_scripts', 'my_custom_theme_enqueue_assets' );
+
+// ... तपाईंको functions.php को अन्य कोड ...
+
+
+?>

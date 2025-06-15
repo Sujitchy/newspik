@@ -62,7 +62,7 @@
                         color: inherit;
                     ">
                         <?php if (has_post_thumbnail()) : ?>
-                            <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title_attribute(); ?>" style="
+                            <img  src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title_attribute(); ?>" style="
                                 width: 100%;
                                 height: auto;
                                 display: block; /* Remove extra space below image */

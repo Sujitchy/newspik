@@ -35,6 +35,6 @@
         </nav>
     </div>
 </header>
-
+<script src='http://yourwebsite.com/wp-content/themes/your-theme-folder/assets/js/scripts.js?ver=1718261821' id='my-theme-custom-script-js'></script>
 </body>
 </html>
