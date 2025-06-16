@@ -7,6 +7,25 @@ function newspik_theme_setup() {
 }
 add_action('after_setup_theme', 'newspik_theme_setup');
 
+function my_custom_sidebars() {
+    register_sidebar(array(
+        'name' => "Sidebar Location",
+        'id' => 'sidebar',
+    ));
+
+    register_sidebar(array(
+        'name' => "Recent Posts",
+        'id' => 'recent-posts',
+    ));
+
+    // register_sidebar(array(
+    //     'name'=>"Inactive widgets",
+    //     'id'=>'Inactive-widgets'
+    // ))
+}
+add_action('widgets_init', 'my_custom_sidebars');
+
+
 // 🎨 Enqueue CSS and JS Files
 function newspik_enqueue_assets() {
     // Main stylesheet (inside assets/css/)

@@ -43,7 +43,7 @@
             'category__in' => wp_get_post_categories(get_the_ID()),
             'posts_per_page' => 6, // 6 posts work well for a grid
             'post__not_in' => array(get_the_ID()),
-            'post_type' => 'post', // Ensure it's posts
+            'post_type' => 'post', // Ensure it's posts 
             'has_post_thumbnail' => true, // Only show posts with thumbnails
         ));
 

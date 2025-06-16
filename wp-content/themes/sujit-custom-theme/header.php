@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); // It's crucial to add this for plugins and theme functions ?>
     <title>NEWSPIK</title>
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/header.css">
 </head>
 <body <?php body_class(); ?>>
 
-<header class="site-header">
-    <div class="header-container">
-        <div class="site-branding">
+  <div class="site-branding">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo-link">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo('name'); ?> Logo" class="header-logo">
+                <p><?php  ?></p>
             </a>
             <div class="site-text-wrapper">
                 <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo('name'); ?></a></h1>
-                <p class="site-description"><?php bloginfo('description'); ?></p>
+                <?php echo do_shortcode('[ndu_today_date]');?>
             </div>
         </div>
-
+<header class="site-header">
+    <div class="header-container">
         <nav class="main-navigation">
             
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-logo-link">
