@@ -22,7 +22,7 @@
 /* --- 2. General Body & Reset Styles --- */
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; */
     background-color: var(--body-background);
     color: var(--text-color-primary);
     line-height: 1.6;
@@ -133,7 +133,7 @@ a {
 .main-navigation ul {
     list-style: none;
     display: flex;
-    gap: 18px;
+    gap: 7px;
     margin: 0;
     padding: 0;
 }
@@ -232,3 +232,19 @@ a {
         font-size: 1.4rem;
     }
 }
+
+/* Mobile Header Height */
+@media screen and (max-width: 480px) {
+    .site-header {
+        height: 60px;
+    }
+
+    .header-logo,
+    .nav-logo {
+        height: 50px;
+    }
+
+    .site-title {
+        font-size: 1.2rem;
+    }
+}    

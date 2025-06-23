@@ -13,11 +13,13 @@
 <main>
     <article class="featured-article">
          <h1 class="news-item-title">
-                                  <a href=""><?php the_title(); ?></a>  
+                                  <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    
                                 </h1>
-                                 <?php if (has_post_thumbnail()) : ?>
+                               <a href="<?php the_permalink(); ?>"> <?php if (has_post_thumbnail()) : ?> 
                             <img src="<?php the_post_thumbnail_url('medium_large'); // Use a slightly larger image size if available ?>" alt="<?php the_title_attribute(); ?>" class="news-item-image" />
-                        <?php endif; ?> 
+                        <?php endif; ?> </a>
+                     
     </article>
 
     <!-- <article class="featured-article">

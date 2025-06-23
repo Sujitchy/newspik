@@ -6,6 +6,7 @@
     <?php wp_head(); // It's crucial to add this for plugins and theme functions ?>
     <title>NEWSPIK</title>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/header.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css">
 </head>
 <body <?php body_class(); ?>>
 
