@@ -64,7 +64,7 @@ main {
     padding: 20px;
     /* border: 1px solid #ddd; */
     grid-column: 1 / -1;
-    margin-top: 100px;
+    margin-top: 80px;
 }
 .featured-article h1 {
     text-align: center;
