@@ -16,10 +16,9 @@
             ));
         ?>
     </div>
-
     <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. सबै अधिकार सुरक्षित।</p>
     <?php wp_footer(); ?>
-    Powedered by <a href="https://mohrain.com">Mohrain Websoft</a>
+    Powered by <a href="https://mohrain.com">Mohrain Websoft</a>
 </footer>
 </body>
 </html>
