@@ -1,0 +1,121 @@
+/* ========== Footer Styles ========== */
+.site-footer {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-dark);
+  font-size: 15px;
+  /* padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md); */
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  border-bottom: 1px solid #ccc;
+  /* padding-bottom: var(--spacing-md); */
+  padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
+}
+
+.footer-logo {
+  flex: 1 1 25%;
+  text-align: center;
+}
+
+.footer-logo img {
+  height: 80px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.footer-logo p {
+  font-weight: bold;
+}
+
+.footer-contact,
+.footer-links {
+  flex: 1 1 35%;
+}
+
+.footer-contact h3,
+.footer-links h3 {
+  color: var(--color-dark);
+  margin-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-dark);
+  padding-bottom: 4px;
+  display: inline-block;
+}
+
+.footer-contact ul,
+.footer-links ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-contact li,
+.footer-links li  {
+  margin-bottom: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+h1, h2, h3 {
+  color: var(--color-dark);
+}
+.footer-links a {
+  color: var(--color-text);
+  transition: color var(--transition);
+}
+
+.footer-links a:hover {
+  color: rgb(124, 2, 2);
+}
+
+/* .footer-bar {
+  text-align: center;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding: var(--spacing-sm);
+  font-size: 14px;
+} */
+
+
+/* ========== Footer Bar ========== */
+.footer-bar {
+  text-align: center;
+  background-color: #557aff; /* Dark Green */
+  padding: var(--spacing-sm);
+  color: var(--color-accent);
+  font-size: 14px;
+  border-top: 1px solid var(--color-accent);
+  margin-top: var(--spacing-md);
+}
+
+.footer-bar p {
+  margin: 0;
+}
+.footer-bar a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: var(--transition);
+}
+.footer-bar a:hover {
+  text-decoration: underline;
+}
+/* ========== Responsive Styles ========== */
+@media (max-width: 768px) {
+  .main-content, .sidebar {
+    width: 100%;
+    float: none;
+  }
+
+  .site-header .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-widget {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}
