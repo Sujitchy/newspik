@@ -29,8 +29,8 @@
     <div class="footer-links">
       <h1>हाम्रो टिम</h1>
       <ul>
-        <li><i class="fas fa-angle-double-right"></i> <a href="#">NEWS</a></li>
-        <li><i class="fas fa-angle-double-right"></i> <a href="#">NEWS</a></li>
+        <li><i class="fas fa-angle-double-right"></i> <a href="#">सदस्य 1</a></li>
+        <li><i class="fas fa-angle-double-right"></i> <a href="#">सदस्य 2</a></li>
       </ul>
     </div>
   </div>

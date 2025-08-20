@@ -26,7 +26,7 @@
             
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-logo-link">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo('name'); ?> Logo" class="nav-logo">
-            </a>
+            </a> 
             <?php
             wp_nav_menu( array(
                 'theme_location' => 'header_menu',
